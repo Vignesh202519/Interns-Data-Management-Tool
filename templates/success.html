@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entry Submitted</title>
+    <meta http-equiv="refresh" content="5;url={{ url_for('home') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .success-animation {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container mt-5 success-animation">
+        <h2 class="text-center text-success">Student Entry Submitted Successfully ✅</h2>
+        <p class="text-center text-muted">Redirecting to home page in 5 seconds...</p>
+        
+        <div class="card mt-4 p-3">
+            <h5>Name: {{ student.name }}</h5>
+            <p>Email: {{ student.email }}</p>
+            <p>Phone: {{ student.phone }}</p>
+            <p>Education: {{ student.education }}</p>
+            <p>Branch: {{ student.branch }}</p>
+            <p>Year: {{ student.year }}</p>
+            <p>Skills: {{ student.skills }}</p>
+        </div>
+        
+        <div class="text-center mt-3">
+            <div class="spinner-border text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        
+        <a href="{{ url_for('home') }}" class="btn btn-primary mt-3">Back to Home</a>
+    </div>
+</body>
+</html>
